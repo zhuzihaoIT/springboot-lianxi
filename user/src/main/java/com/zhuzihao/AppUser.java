@@ -10,5 +10,7 @@ public class AppUser {
     public static void main(String[] args) {
         SpringApplication.run(AppUser.class);
         System.out.println("hahhah");
+        System.out.println("在远程中写了一些东西");
     }
+
 }
