@@ -1,0 +1,22 @@
+logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} %clr(%5p) %clr(-){faint} %clr(%-80.80logger{79}){cyan} %clr(:) %m%n"
+server:
+  port: 5000
+
+spring:
+  application:
+    name: client-user #此实例注册到eureka服务端的name
+
+eureka:
+  client:
+    service-url:
+      #eureka服务端提供的注册地址参考 服务端配置的这个路径
+      defaultZone: http://localhost:3000/eureka
+  instance:
+    instance-id: user-1 #此实例组测到eureka服务端的唯一实例 ID
+    prefer-ip-address: true #是否显示IP地址
+    #eureka客户需要多长时间发送心跳给eureka服务器，表明他依然活着，默认30秒
+    lease-renewal-interval-in-seconds: 10
+    #eureka服务器在接收到实例的最后一次发出的心跳后，需要等待多久才可以将此实例删除，默认为90秒
+    lease-expiration-duration-in-seconds: 30

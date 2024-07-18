@@ -1,0 +1,20 @@
+logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} %clr(%5p) %clr(-){faint} %clr(%-80.80logger{79}){cyan} %clr(:) %m%n"
+
+server:
+  port: 3000
+
+eureka:
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 4000 #设置清理间隔(单位：毫秒  默认是60*1000)
+  instance:
+    hostname: localhost
+
+  client:
+    register-with-eureka: false #不吧自己作为一个可客户端注册到自己身上
+    fetch-registry: false #不需要从服务端获取注册信息(因为在这里自己就是服务端，而且已经禁用自己注册了)
+    service-url: #微服务要注册到的地址
+      #http://localhost:3000/eureka
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
