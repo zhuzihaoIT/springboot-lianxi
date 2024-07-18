@@ -9,5 +9,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 public class AppUser {
     public static void main(String[] args) {
         SpringApplication.run(AppUser.class);
+        System.out.println("在远程中写了一些东西");
     }
+    
 }
